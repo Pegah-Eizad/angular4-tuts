@@ -9,8 +9,9 @@
  </div>
  <br/>
  <div>
-    <span *ngIf="isavailable; else condition1">Condition is valid.</span>
+    <span *ngIf="isavailable; then condition1 else condition2">Condition is valid.</span>
     <ng-template #condition1>Condition is invalid</ng-template>
+    <ng-template #condition2>Condition is invalid, AGAIN</ng-template>
  </div>
 
  <div>

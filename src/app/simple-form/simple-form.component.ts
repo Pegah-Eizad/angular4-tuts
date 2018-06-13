@@ -22,7 +22,7 @@ export class SimpleFormComponent implements OnInit {
   @Input() message;
 
   onClick(value){
-    console.log(value);
+    alert('Button Clicked in the event handler function.');
   }
 
   constructor(

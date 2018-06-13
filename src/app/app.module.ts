@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { NewCompComponent } from './new-comp/new-comp.component';
 import { MailService } from './mail.service';
+import { ChangeTextDirective } from './change-text.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SimpleFormComponent,
-    NewCompComponent
+    NewCompComponent,
+    ChangeTextDirective
   ],
   imports: [
     BrowserModule,
