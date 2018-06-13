@@ -1,13 +1,13 @@
-import { Component, Inject} from '@angular/core';
+import { Component, Inject, OnInit} from '@angular/core';
 import { MailService } from './mail.service';
 import { Http } from '@angular/http';
-//import 'rxjs/add/operator/map';
+//import * as anything from 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   title = 'Angular 4 project!!';
   months = ['January', 'Feburary', 'March', 'April', 'May', 
@@ -19,6 +19,6 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.http.get('http://jsonplaceholder.typicode.com/users').map((response) => response.json()).subscribe((data) => console.log(data))
+    this.http.get('http://jsonplaceholder.typicode.com/users').subscribe((data) => console.log(data.json()));
  }
 }
