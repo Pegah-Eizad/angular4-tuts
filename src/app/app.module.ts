@@ -9,6 +9,7 @@ import { NewCompComponent } from './new-comp/new-comp.component';
 import { MailService } from './mail.service';
 import { ChangeTextDirective } from './change-text.directive';
 import { SqrtPipe } from './app.sqrt';
+import { RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,13 @@ import { SqrtPipe } from './app.sqrt';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {
+         path: 'new-comp',
+         component: NewCompComponent
+      }
+   ])
   ],
   providers: [{provide: 'mail', useClass: MailService},
   {provide: 'api', useValue: 'http://localhost:3000/'}],
