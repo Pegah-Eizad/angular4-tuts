@@ -8,13 +8,15 @@ import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { NewCompComponent } from './new-comp/new-comp.component';
 import { MailService } from './mail.service';
 import { ChangeTextDirective } from './change-text.directive';
+import { SqrtPipe } from './app.sqrt';
 
 @NgModule({
   declarations: [
     AppComponent,
     SimpleFormComponent,
     NewCompComponent,
-    ChangeTextDirective
+    ChangeTextDirective,
+    SqrtPipe
   ],
   imports: [
     BrowserModule,
