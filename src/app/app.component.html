@@ -31,3 +31,8 @@
 </div>
 <a routerLink = 'new-comp'>New component</a>
 <router-outlet></router-outlet>
+<hr>
+<p>Displaying JSON data below</p>
+<ul *ngFor = "let data of httpdata">
+  <li>Name : {{data.name}} Address: {{data.address.city}}</li>
+</ul>
