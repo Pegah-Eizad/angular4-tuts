@@ -8,7 +8,7 @@ import { Http } from '@angular/http';
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit{
-
+  httpdata;
   title = 'Angular 4 project!!';
   months = ['January', 'Feburary', 'March', 'April', 'May', 
             'June', 'July', 'August', 'September',
@@ -17,17 +17,16 @@ export class AppComponent implements OnInit{
   isavailable = false;
   constructor( private mail: MailService, private http: Http){
   }
+  /*
+  ngOnInit() {
+    this.http.get('http://jsonplaceholder.typicode.com/users').subscribe((data) => console.log(data.json()));
+ } */
 
   ngOnInit() {
-    this.http.get("http://jsonplaceholder.typicode.com/users").
-      subscribe((data) => console.log(data))
- }
+    this.http.get('http://jsonplaceholder.typicode.com/users').subscribe((data) => this.displaydata(data.json()));
+  }
 
- /*
-  displaydata(data) { this.httpdata = data; }
-  
-  converttoarray(data) {
-    //console.log(data);
-    this.name = data.name;
- } */
+  displaydata(data) {
+    this.httpdata = data;
+  }
 }
