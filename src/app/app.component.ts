@@ -17,8 +17,20 @@ export class AppComponent implements OnInit{
   isavailable = false;
   constructor( private mail: MailService, private http: Http){
   }
+  httpdata;
+  searchparam = 2;
+  jsondata;
+  name;
 
   ngOnInit() {
-    this.http.get('http://jsonplaceholder.typicode.com/users').subscribe((data) => console.log(data.json()));
+    this.http.get('http://jsonplaceholder.typicode.com/users?id=' + this.searchparam).
+    subscribe((data) => {this.converttoarray(data);})
+ }
+
+  displaydata(data) { this.httpdata = data; }
+  
+  converttoarray(data) {
+    console.log(data);
+    this.name = data[0].name;
  }
 }
