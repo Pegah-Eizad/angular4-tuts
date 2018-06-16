@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit} from '@angular/core';
 import { MailService } from './mail.service';
 import { Http } from '@angular/http';
-//import * as anything from 'rxjs/add/operator/map';
+
 
 @Component({
   selector: 'app-root',
@@ -24,12 +24,11 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     this.http.get('http://jsonplaceholder.typicode.com/users').subscribe((data) => console.log(data.json()));
  } */
-
- 
   ngOnInit() {
-    this.http.get('http://jsonplaceholder.typicode.com/users').subscribe((data) => this.converttoarray(data.json()));
+    this.http.get('http://jsonplaceholder.typicode.com/users').subscribe( data => this.displaydata(data.json()));
+    this.http.get('http://jsonplaceholder.typicode.com/users').
+    subscribe((data) => this.converttoarray(data.json()));
   }
-  
 
   displaydata(data) {
     this.httpdata = data;
