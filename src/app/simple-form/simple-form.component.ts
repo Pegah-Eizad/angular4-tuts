@@ -7,11 +7,11 @@ import { MailService } from '../mail.service';
   template: `<div>
   <p> inside app-simple-form component </p>
    <ul>
-     <li *ngFor="let message of mail.messages">
+     <li>
        {{message}}
      </li>
    </ul>
-   <input #myInput type="text">
+   <input #myInput type="text" [(ngModel)]="mail.message">
    <button (click)="onClick(myInput.value)">Click Me!</button>
 
 </div>`,
@@ -21,7 +21,7 @@ export class SimpleFormComponent implements OnInit {
 
   @Input() message;
 
-  onClick(value){
+  onClick(value) {
     alert('Button Clicked in the event handler function.');
   }
 

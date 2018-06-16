@@ -16,19 +16,18 @@
  <div>
   <span appChangeText >Welcome to {{title | uppercase}}.</span>
  </div>
-
  <div>
-    
     <app-new-comp></app-new-comp>
     <hr>
-
-    <app-simple-form></app-simple-form>
-
+    <p>Displaying app-simple-form</p>
+    <app-simple-form *ngFor="let message of mail.messages" [message]='message'>
+    </app-simple-form>
     <hr>
     <b>Square root of 25 is: {{25 | sqrt}}</b>
     {{api}}
     <hr>
 </div>
+<p>Routers</p>
 <a routerLink = 'new-comp'>New component</a>
 <router-outlet></router-outlet>
 <hr>
