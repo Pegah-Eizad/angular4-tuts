@@ -20,7 +20,11 @@
     <app-new-comp></app-new-comp>
     <hr>
     <p>Displaying app-simple-form</p>
-    <app-simple-form *ngFor="let message of mail.messages" [message]='message'>
+    <p>Passing in an array with @Input and []</p>
+    <app-simple-form [message]='message'>
+    </app-simple-form>
+    <p>Output Demo:</p>
+    <app-simple-form (update)='onUpdate($event)'>
     </app-simple-form>
     <hr>
     <b>Square root of 25 is: {{25 | sqrt}}</b>
